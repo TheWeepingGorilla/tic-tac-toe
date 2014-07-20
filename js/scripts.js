@@ -4,6 +4,19 @@ var Player = {
   },
 };
 
+var Space = {
+  xCoordinate: 0,
+  yCoordinate: 0,
+  initialize: function(x,y) {
+    this.xCoordinate = x;
+    this.yCoordinate = y;
+  },
+}
+
+
+
+
+
 $(document).ready(function() {
   $('#new-tamagotchi-form').submit(function(event) {
     var newTamagotchi = Object.create(Tamagotchi);
