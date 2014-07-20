@@ -18,8 +18,6 @@ describe("Space", function() {
     });
   });
 
-  // describe("create"); // you write the rest of this one!
-
   describe("markBy", function() {
     it("lets a player mark the space", function() {
       var testPlayer = Object.create(Player);
@@ -33,5 +31,12 @@ describe("Space", function() {
 });
 
 describe("Board", function() {
-  it("creates 9 spaces when it is initialized"); // you write the rest!
+  describe("initialize", function() {
+    it("creates a board of 9 spaces in a 3x3 pattern", function() {
+      var testBoard = Object.create(Board);
+      testBoard.initialize();
+      testBoard.find(1,1).should.equal(testBoard.boardSpace11);
+    });
+  });
 });
+
