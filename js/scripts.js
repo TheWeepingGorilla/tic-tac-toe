@@ -82,6 +82,8 @@ var Game = {
   playerX : {},
   playerY : {},
   gameBoard : {},
+  playerTurn : {},
+
 
   initialize: function() {
     this.playerX = Object.create(Player);
@@ -90,7 +92,17 @@ var Game = {
     this.playerY.initialize("Y");
     this.gameBoard = Object.create(Board);
     this.gameBoard.initialize();
+    this.playerTurn = this.playerX;
   },
+
+  changeTurn: function() {
+    if (this.playerTurn === this.playerX) {
+      this.playerTurn = this.playerY;
+    } else {
+      this.playerTurn = this.playerX;
+    }
+  },
+
 
 
 }

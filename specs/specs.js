@@ -42,12 +42,23 @@ describe("Board", function() {
 
 describe("Game", function() {
   describe("initialize", function() {
-    it("creates two players and a board", function() {
+    it("creates two players and a board and sets turn to X", function() {
       var testGame = Object.create(Game);
       testGame.initialize();
       testGame.gameBoard.find(2,2).should.equal(testGame.gameBoard.boardSpace22);
       testGame.playerX.symbol.should.equal("X");
       testGame.playerY.symbol.should.equal("Y");
+      testGame.playerTurn.should.equal(testGame.playerX);
+    });
+  });
+  describe("changeTurn", function() {
+    it("changes turn from X to Y and Y to X", function() {
+      var testGame = Object.create(Game);
+      testGame.initialize();
+      testGame.changeTurn();
+      testGame.playerTurn.should.equal(testGame.playerY);
+      testGame.changeTurn();
+      testGame.playerTurn.should.equal(testGame.playerX);
     });
   });
 });
