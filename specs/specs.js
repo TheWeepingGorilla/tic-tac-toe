@@ -18,7 +18,7 @@ describe("Space", function() {
     });
   });
 
-  describe("create"); // you write the rest of this one!
+  // describe("create"); // you write the rest of this one!
 
   describe("markBy", function() {
     it("lets a player mark the space", function() {
@@ -27,7 +27,7 @@ describe("Space", function() {
       var testSpace = Object.create(Space);
       testSpace.initialize(1, 2);
       testSpace.markBy(testPlayer);
-      testSpace.markedBy.should.equal(testPlayer);
+      testSpace.markedBy().should.equal(testPlayer);
     });
   });
 });

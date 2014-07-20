@@ -1,6 +1,7 @@
 var Player = {
-  initialize: function(symbol) {
-    this.symbol = symbol;
+  symbol : "",
+  initialize: function(playerSymbol) {
+    this.symbol = playerSymbol;
   },
 };
 
@@ -11,7 +12,14 @@ var Space = {
     this.xCoordinate = x;
     this.yCoordinate = y;
   },
-}
+  mark: {},
+  markBy: function(player) {
+    this.mark = player;
+  },
+  markedBy: function() {
+    return this.mark;
+  },
+};
 
 
 
