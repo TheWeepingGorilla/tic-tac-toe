@@ -35,8 +35,19 @@ describe("Board", function() {
     it("creates a board of 9 spaces in a 3x3 pattern", function() {
       var testBoard = Object.create(Board);
       testBoard.initialize();
-      testBoard.find(1,1).should.equal(testBoard.boardSpace11);
+      testBoard.find(2,2).should.equal(testBoard.boardSpace22);
     });
   });
 });
 
+describe("Game", function() {
+  describe("initialize", function() {
+    it("creates two players and a board", function() {
+      var testGame = Object.create(Game);
+      testGame.initialize();
+      testGame.gameBoard.find(2,2).should.equal(testGame.gameBoard.boardSpace22);
+      testGame.playerX.symbol.should.equal("X");
+      testGame.playerY.symbol.should.equal("Y");
+    });
+  });
+});

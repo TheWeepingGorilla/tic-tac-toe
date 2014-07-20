@@ -78,6 +78,22 @@ var Board = {
   },
 };
 
+var Game = {
+  playerX : {},
+  playerY : {},
+  gameBoard : {},
+
+  initialize: function() {
+    this.playerX = Object.create(Player);
+    this.playerX.initialize("X");
+    this.playerY = Object.create(Player);
+    this.playerY.initialize("Y");
+    this.gameBoard = Object.create(Board);
+    this.gameBoard.initialize();
+  },
+
+
+}
 
 
 // $(document).ready(function() {
