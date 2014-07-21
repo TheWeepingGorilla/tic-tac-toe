@@ -7,33 +7,35 @@
     <script src="js/jquery-1.11.1.js"></script>
     <script src="js/scripts.js"></script>
 
-    <title>Tamagotchi</title>
+    <title>Tic-Tac-Toe</title>
   </head>
   <body>
     <div class="container">
-      <h2>Tamagotchi!</h2>
-      <form id="new-tamagotchi-form">
-        <div class="form-group">
-          <input id='new-tamagotchi-name' type="text" placeholder="Name">
-          <br>
-          <button type="submit" class="btn btn-sm">Neu!</button>
-        </div>
-      </form>
-
-
-      <button type="button" id="hourglass" class="btn btn-primary btn-xs">Like the sands of an hourglass...</button>
+      <h2>Tic-Tac-Toe</h2>
       <br>
-      <br>
-      <p>Food Level: <span id="food"></span></p>
-      <p>Activity Level: <span id="activity"></span></p>
-      <p>Sleep Level: <span id="sleep"></span></p>
-      <br>
-      <button type="button" id="foodbtn" class="btn btn-primary btn-xs">Food</button>
-      <br>
-      <button type="button" id="playbtn" class="btn btn-primary btn-xs">Play</button>
-      <br>
-      <button type="button" id="sleepbtn" class="btn btn-primary btn-xs">Sleep</button>
-      <br>
+      <button type="submit" id="new-game" class="btn btn-sm">New Game</button>
+      <div class="col-md-3">
+        <h3>The Game:</h3>
+        <table id="result-table" class="table table-hover">
+          <tbody>
+            <tr>
+              <td id="zero-zero"></td>
+              <td id="one-zero"></td>
+              <td id="two-zero"></td>
+            </tr>
+            <tr>
+              <td id="zero-one"></td>
+              <td id="one-one"></td>
+              <td id="two-one"></td>
+            </tr>
+            <tr>
+              <td id="zero-two"></td>
+              <td id="one-two"></td>
+              <td id="two-two"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </body>
 </html>
