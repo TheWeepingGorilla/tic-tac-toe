@@ -140,7 +140,7 @@ $(document).ready(function() {
   $('#new-game').click(function(event) {
     var newGame = Object.create(Game);
     newGame.initialize();
-    alert("Game initialized!");
+
 
     // newTamagotchi.initialize($('input#new-tamagotchi-name').val());
     // $('#food').append(newTamagotchi.foodLevel);
@@ -148,7 +148,46 @@ $(document).ready(function() {
     // $('#sleep').append(newTamagotchi.sleepLevel);
     // event.preventDefault();
 
-    // $('#hourglass').click(function(event) {
+    $('#zero-zero').click(function(event) {
+      alert("0,0 clicked!");
+
+    });
+    $('#one-zero').click(function(event) {
+      alert("1,0 clicked!");
+
+    });
+    $('#two-zero').click(function(event) {
+      alert("2,0 clicked!");
+
+    });
+    $('#zero-one').click(function(event) {
+      alert("0,1 clicked!");
+
+    });
+    $('#one-one').click(function(event) {
+      alert("1,1 clicked!");
+
+    });
+    $('#two-one').click(function(event) {
+      alert("2,1 clicked!");
+
+    });
+    $('#zero-two').click(function(event) {
+      alert("0,2 clicked!");
+
+    });
+    $('#one-two').click(function(event) {
+      alert("1,2 clicked!");
+
+    });
+    $('#two-two').click(function(event) {
+      alert("2,2 clicked!");
+
+    });
+
+
+
+
     //   newTamagotchi.hungry();
     //   newTamagotchi.sleepy();
     //   newTamagotchi.bored();
