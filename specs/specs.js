@@ -61,4 +61,14 @@ describe("Game", function() {
       testGame.playerTurn.should.equal(testGame.playerX);
     });
   });
+  describe("isGameOver", function() {
+    it("tells you who one the game if X gets 3 in a row", function() {
+      var testGame = Object.create(Game);
+      testGame.initialize();
+      testGame.gameBoard.boardArray[0][0].markBy("X");
+      testGame.gameBoard.boardArray[1][1].markBy("X");
+      testGame.gameBoard.boardArray[2][2].markBy("X");
+      testGame.isGameOver().should.equal(testGame.playerTurn);
+    });
+  });
 });

@@ -103,8 +103,36 @@ var Game = {
     }
   },
 
-
-
+  isGameOver: function() {
+    for (var xCoor = 0; xCoor < 3; xCoor++) {
+      if ( (this.gameBoard.boardArray[xCoor][0].markedBy ===
+            this.gameBoard.boardArray[xCoor][1].markedBy) &&
+           (this.gameBoard.boardArray[xCoor][1].markedBy ===
+            this.gameBoard.boardArray[xCoor][2].markedBy) ) {
+        return this.playerTurn;
+      }
+    }
+    for (var yCoor = 0; yCoor < 3; yCoor++) {
+      if ( (this.gameBoard.boardArray[yCoor][0].markedBy ===
+            this.gameBoard.boardArray[yCoor][1].markedBy) &&
+           (this.gameBoard.boardArray[yCoor][1].markedBy ===
+            this.gameBoard.boardArray[yCoor][2].markedBy) ) {
+        return this.playerTurn;
+      }
+    }
+    if ( (this.gameBoard.boardArray[0][0].markedBy ===
+          this.gameBoard.boardArray[1][1].markedBy) &&
+         (this.gameBoard.boardArray[1][1].markedBy ===
+          this.gameBoard.boardArray[2][2].markedBy) ) {
+      return this.playerTurn;
+    }
+    if ( (this.gameBoard.boardArray[0][2].markedBy ===
+          this.gameBoard.boardArray[1][1].markedBy) &&
+         (this.gameBoard.boardArray[1][1].markedBy ===
+          this.gameBoard.boardArray[2][0].markedBy) ) {
+      return this.playerTurn;
+    }
+  },
 }
 
 
