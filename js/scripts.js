@@ -109,7 +109,7 @@ var Game = {
             this.gameBoard.boardArray[xCoor][1].markedBy) &&
            (this.gameBoard.boardArray[xCoor][1].markedBy ===
             this.gameBoard.boardArray[xCoor][2].markedBy) ) {
-        return this.playerTurn;
+        return true;
       }
     }
     for (var yCoor = 0; yCoor < 3; yCoor++) {
@@ -117,20 +117,20 @@ var Game = {
             this.gameBoard.boardArray[yCoor][1].markedBy) &&
            (this.gameBoard.boardArray[yCoor][1].markedBy ===
             this.gameBoard.boardArray[yCoor][2].markedBy) ) {
-        return this.playerTurn;
+        return true;
       }
     }
     if ( (this.gameBoard.boardArray[0][0].markedBy ===
           this.gameBoard.boardArray[1][1].markedBy) &&
          (this.gameBoard.boardArray[1][1].markedBy ===
           this.gameBoard.boardArray[2][2].markedBy) ) {
-      return this.playerTurn;
+      return true;
     }
     if ( (this.gameBoard.boardArray[0][2].markedBy ===
           this.gameBoard.boardArray[1][1].markedBy) &&
          (this.gameBoard.boardArray[1][1].markedBy ===
           this.gameBoard.boardArray[2][0].markedBy) ) {
-      return this.playerTurn;
+      return true;
     }
   },
 }
@@ -142,83 +142,129 @@ $(document).ready(function() {
     newGame.initialize();
 
 
-    // newTamagotchi.initialize($('input#new-tamagotchi-name').val());
-    // $('#food').append(newTamagotchi.foodLevel);
-    // $('#activity').append(newTamagotchi.activityLevel);
-    // $('#sleep').append(newTamagotchi.sleepLevel);
-    // event.preventDefault();
+//     // newTamagotchi.initialize($('input#new-tamagotchi-name').val());
+//     // $('#food').append(newTamagotchi.foodLevel);
+//     // $('#activity').append(newTamagotchi.activityLevel);
+//     // $('#sleep').append(newTamagotchi.sleepLevel);
+//     // event.preventDefault();
 
     $('#zero-zero').click(function(event) {
-      alert("0,0 clicked!");
-
+      $('td#zero-zero').empty();
+      $('td#zero-zero').append(newGame.playerTurn.symbol);
+      if (newGame.isGameOver()) {
+        alert("Game is over. " + newGame.playerTurn.symbol + " won.");
+      } else {
+        newGame.changeTurn;
+      }
     });
-    $('#one-zero').click(function(event) {
-      alert("1,0 clicked!");
 
+    $('#one-zero').click(function(event) {
+      $('td#one-zero').empty();
+      $('td#one-zero').append(newGame.playerTurn.symbol);
+      if (newGame.isGameOver()) {
+        alert("Game is over. " + newGame.playerTurn.symbol + " won.");
+      } else {
+        newGame.changeTurn;
+      }
     });
     $('#two-zero').click(function(event) {
-      alert("2,0 clicked!");
-
+      $('td#two-zero').empty();
+      $('td#two-zero').append(newGame.playerTurn.symbol);
+      if (newGame.isGameOver()) {
+        alert("Game is over. " + newGame.playerTurn.symbol + " won.");
+      } else {
+        newGame.changeTurn;
+      }
     });
     $('#zero-one').click(function(event) {
-      alert("0,1 clicked!");
-
+      $('td#zero-one').empty();
+      $('td#zero-one').append(newGame.playerTurn.symbol);
+      if (newGame.isGameOver() === newGame.playerTurn) {
+        alert("Game is over. " + newGame.playerTurn.symbol + " won.");
+      } else {
+        newGame.changeTurn;
+      }
     });
     $('#one-one').click(function(event) {
-      alert("1,1 clicked!");
-
+      $('td#one-one').empty();
+      $('td#one-one').append(newGame.playerTurn.symbol);
+      if (newGame.isGameOver() === newGame.playerTurn) {
+        alert("Game is over. " + newGame.playerTurn.symbol + " won.");
+      } else {
+        newGame.changeTurn;
+      }
     });
     $('#two-one').click(function(event) {
-      alert("2,1 clicked!");
-
+      $('td#two-one').empty();
+      $('td#two-one').append(newGame.playerTurn.symbol);
+      if (newGame.isGameOver() === newGame.playerTurn) {
+        alert("Game is over. " + newGame.playerTurn.symbol + " won.");
+      } else {
+        newGame.changeTurn;
+      }
     });
     $('#zero-two').click(function(event) {
-      alert("0,2 clicked!");
-
+      $('td#zero-two').empty();
+      $('td#zero-two').append(newGame.playerTurn.symbol);
+      if (newGame.isGameOver() === newGame.playerTurn) {
+        alert("Game is over. " + newGame.playerTurn.symbol + " won.");
+      } else {
+        newGame.changeTurn;
+      }
     });
     $('#one-two').click(function(event) {
-      alert("1,2 clicked!");
-
+    $('td#one-two').empty();
+      $('td#one-two').append(newGame.playerTurn.symbol);
+      if (newGame.isGameOver() === newGame.playerTurn) {
+        alert("Game is over. " + newGame.playerTurn.symbol + " won.");
+      } else {
+        newGame.changeTurn;
+      }
     });
     $('#two-two').click(function(event) {
-      alert("2,2 clicked!");
-
+    $('td#two-two').empty();
+      $('td#two-two').append(newGame.playerTurn.symbol);
+      if (newGame.isGameOver() === newGame.playerTurn) {
+        alert("Game is over. " + newGame.playerTurn.symbol + " won.");
+      } else {
+        newGame.changeTurn;
+      }
     });
 
 
 
 
-    //   newTamagotchi.hungry();
-    //   newTamagotchi.sleepy();
-    //   newTamagotchi.bored();
-    //   if (!newTamagotchi.isAlive()) {
-    //     alert("Game Over man!  Game over!");
-    //   }
-    //   $('#food').empty();
-    //   $('#food').append(newTamagotchi.foodLevel);
-    //   $('#activity').empty();
-    //   $('#activity').append(newTamagotchi.activityLevel);
-    //   $('#sleep').empty();
-    //   $('#sleep').append(newTamagotchi.sleepLevel);
-    // });
+//     //   newTamagotchi.hungry();
+//     //   newTamagotchi.sleepy();
+//     //   newTamagotchi.bored();
+//     //   if (!newTamagotchi.isAlive()) {
+//     //     alert("Game Over man!  Game over!");
+//     //   }
+//     //   $('#food').empty();
+//     //   $('#food').append(newTamagotchi.foodLevel);
+//     //   $('#activity').empty();
+//     //   $('#activity').append(newTamagotchi.activityLevel);
+//     //   $('#sleep').empty();
+//     //   $('#sleep').append(newTamagotchi.sleepLevel);
+//     // });
 
-    // $('#foodbtn').click(function(event) {
-    //   newTamagotchi.fed();
-    //   $('#food').empty();
-    //   $('#food').append(newTamagotchi.foodLevel);
-    // });
+//     // $('#foodbtn').click(function(event) {
+//     //   newTamagotchi.fed();
+//     //   $('#food').empty();
+//     //   $('#food').append(newTamagotchi.foodLevel);
+//     // });
 
-    // $('#playbtn').click(function(event) {
-    //   newTamagotchi.recess();
-    //   $('#activity').empty();
-    //   $('#activity').append(newTamagotchi.activityLevel);
-    // });
+//     // $('#playbtn').click(function(event) {
+//     //   newTamagotchi.recess();
+//     //   $('#activity').empty();
+//     //   $('#activity').append(newTamagotchi.activityLevel);
+//     // });
 
-    // $('#sleepbtn').click(function(event) {
-    //   newTamagotchi.sleepyTime();
-    //   $('#sleep').empty();
-    //   $('#sleep').append(newTamagotchi.sleepLevel);
-    // });
+//     // $('#sleepbtn').click(function(event) {
+//     //   newTamagotchi.sleepyTime();
+//     //   $('#sleep').empty();
+//     //   $('#sleep').append(newTamagotchi.sleepLevel);
+//     // });
 
   });
 });
